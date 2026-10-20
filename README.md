@@ -1,87 +1,30 @@
 # 🍔 Niazi Food
 
-**Niazi Food** is a modern food website designed to showcase delicious food items and provide users with an attractive, user-friendly browsing experience. The project focuses on clean design, responsive layouts, and an engaging interface for food lovers.
+Welcome to **Niazi Food**! 🍟
+
+Niazi Food is a food website created to showcase delicious meals and provide customers with an enjoyable food-browsing experience. Our goal is to present tasty food, quality ingredients, and an attractive user interface.
 
 ## ✨ Features
 
-- 🍕 Attractive and modern food website design
-- 🍔 Food items and menu presentation
-- 📱 Responsive layout for mobile, tablet, and desktop
-- 🎨 Clean UI and user-friendly navigation
-- ⚡ Fast and smooth browsing experience
+- 🍔 Delicious food items
+- 🍕 Attractive food menu
+- 📱 Responsive website design
+- 🎨 Modern and user-friendly interface
+- ⚡ Smooth browsing experience
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
-- React.js *(if used in this project)*
-- Vite *(if used in this project)*
-
-## 🚀 Getting Started
-
-Follow these steps to run the project locally.
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Sami2526/Niazi_food.git
-```
-
-### 2. Navigate to the Project Folder
-
-```bash
-cd Niazi_food
-```
-
-### 3. Navigate to the Frontend Folder
-
-```bash
-cd frontend
-```
-
-### 4. Install Dependencies
-
-```bash
-npm install
-```
-
-### 5. Start the Development Server
-
-```bash
-npm run dev
-```
-
-Open the local URL displayed in your terminal to view the website.
-
-## 📂 Project Structure
-
-```text
-Niazi_food/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   └── ...
-└── README.md
-```
-
-*The structure may vary depending on the project setup.*
-
-## 🌐 GitHub Repository
-
-[View Niazi Food on GitHub](https://github.com/Sami2526/Niazi_food)
+- React.js 
 
 ## 👨‍💻 Developer
 
 **Sami Ullah Khan**
 
-Frontend Web Developer
-
-- GitHub: [Sami2526](https://github.com/Sami2526)
+GitHub: https://github.com/Sami2526
 
 ---
 
-⭐ If you like this project, consider giving it a star on GitHub!
-
-**Niazi Food — Delicious Taste, Quality Food, Happy Moments!** 🍔❤️
+**Niazi Food — Great Taste, Great Food! ❤️**
