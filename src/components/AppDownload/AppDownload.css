@@ -1,0 +1,63 @@
+.app-download {
+    margin: 80px auto;
+    text-align: center;
+    font-weight: 500;
+    /* Use clamp() for responsive font size with upper bound */
+    font-size: clamp(20px, 3vw, 42px);   /* min 20px, preferred 3vw, max 42px */
+}
+
+.app-download p {
+    max-width: 700px;          /* limit text width for readability */
+    margin: 0 auto;            /* center the paragraph */
+    line-height: 1.4;
+}
+
+.app-download-platforms {
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 2vw, 50px);  /* responsive gap with max */
+    margin-top: 40px;
+    flex-wrap: wrap;           /* allow wrapping on small screens */
+}
+
+.app-download-platforms img {
+    width: clamp(120px, 30vw, 200px);   /* min 120px, preferred 30vw, max 200px */
+    max-width: 200px;          /* ensure no image exceeds this */
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.app-download-platforms img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Large screens (≥ 1200px) extra spacing ===== */
+@media (min-width: 1200px) {
+    .app-download {
+        margin: 100px auto;
+    }
+    .app-download-platforms {
+        gap: 60px;              /* more space between store buttons */
+    }
+    .app-download-platforms img {
+        width: 180px;           /* fixed larger size on big screens */
+        max-width: 180px;
+    }
+}
+
+/* ===== Mobile adjustments ===== */
+@media (max-width: 600px) {
+    .app-download {
+        font-size: clamp(18px, 5vw, 24px);  /* slightly smaller on small screens */
+        margin: 60px auto;
+    }
+    .app-download-platforms {
+        gap: 15px;
+        flex-direction: column;   /* stack the two store buttons */
+        align-items: center;
+    }
+    .app-download-platforms img {
+        width: 150px;
+        max-width: 150px;
+    }
+}

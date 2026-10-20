@@ -1,0 +1,84 @@
+/* ===== Base styles ===== */
+.food_display {
+    margin-top: 30px;
+}
+
+.food_display h2 {
+    font-size: clamp(24px, 2.5vw, 42px);   /* responsive heading */
+    font-weight: 600;
+    color: #333;
+}
+
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;          /* vertical gap between rows */
+}
+
+/* ===== LARGE SCREENS (≥ 1200px) ===== */
+@media (min-width: 1200px) {
+    .food-display-list {
+        /* Limit maximum card width by using a more constrained grid */
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 40px;
+        row-gap: 60px;       /* more vertical space between rows */
+    }
+
+    .food_display h2 {
+        font-size: 40px;     /* fixed size for large screens, or keep clamp */
+    }
+}
+
+/* ===== EXTRA LARGE SCREENS (≥ 1600px) – optional ===== */
+@media (min-width: 1600px) {
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 50px;
+        row-gap: 70px;
+        max-width: 1400px;   /* optional: limit the grid width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ===== MEDIUM SCREENS (≤ 1050px) ===== */
+@media (max-width: 1050px) {
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 25px;
+        row-gap: 40px;
+    }
+}
+
+/* ===== TABLETS (≤ 750px) ===== */
+@media (max-width: 750px) {
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        row-gap: 35px;
+    }
+    .food_display h2 {
+        font-size: clamp(20px, 4vw, 30px);
+    }
+}
+
+/* ===== MOBILE (≤ 480px) ===== */
+@media (max-width: 480px) {
+    .food-display-list {
+        grid-template-columns: 1fr 1fr;    /* force 2 columns on very small screens */
+        gap: 15px;
+        row-gap: 25px;
+    }
+}
+
+.related-foods {
+    margin-top: 70px;
+    scroll-margin-top: 24px;
+}
+
+.food-display-empty {
+    margin-top: 24px;
+    color: #676767;
+}
