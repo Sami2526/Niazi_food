@@ -1,16 +1,87 @@
-# React + Vite
+# 🍔 Niazi Food
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Niazi Food** is a modern food website designed to showcase delicious food items and provide users with an attractive, user-friendly browsing experience. The project focuses on clean design, responsive layouts, and an engaging interface for food lovers.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🍕 Attractive and modern food website design
+- 🍔 Food items and menu presentation
+- 📱 Responsive layout for mobile, tablet, and desktop
+- 🎨 Clean UI and user-friendly navigation
+- ⚡ Fast and smooth browsing experience
 
-## React Compiler
+## 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- HTML5
+- CSS3
+- JavaScript
+- React.js *(if used in this project)*
+- Vite *(if used in this project)*
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to run the project locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Sami2526/Niazi_food.git
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd Niazi_food
+```
+
+### 3. Navigate to the Frontend Folder
+
+```bash
+cd frontend
+```
+
+### 4. Install Dependencies
+
+```bash
+npm install
+```
+
+### 5. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal to view the website.
+
+## 📂 Project Structure
+
+```text
+Niazi_food/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── ...
+└── README.md
+```
+
+*The structure may vary depending on the project setup.*
+
+## 🌐 GitHub Repository
+
+[View Niazi Food on GitHub](https://github.com/Sami2526/Niazi_food)
+
+## 👨‍💻 Developer
+
+**Sami Ullah Khan**
+
+Frontend Web Developer
+
+- GitHub: [Sami2526](https://github.com/Sami2526)
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub!
+
+**Niazi Food — Delicious Taste, Quality Food, Happy Moments!** 🍔❤️
