@@ -19,60 +19,62 @@ function App() {
   return (
     <>
       <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Routes>
-        <Route path="/" element={<Home searchTerm={searchTerm} />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/cart" element={<Cart />} />
-        <Route
-          path="/order"
-          element={
-            <ProtectedRoute>
-              <PlaceOrder />
-            </ProtectedRoute>
-          }
-        />
-        {/* Admin routes – require admin role */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/products"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AdminProducts />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/orders"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AdminOrders />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/users"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AdminUsers />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <main className="mx-auto w-full max-w-[1800px] overflow-x-hidden px-[clamp(16px,2.5vw,40px)] max-[1024px]:px-6 max-[768px]:px-[18px] max-[480px]:px-[14px]">
+        <Routes>
+          <Route path="/" element={<Home searchTerm={searchTerm} />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/order"
+            element={
+              <ProtectedRoute>
+                <PlaceOrder />
+              </ProtectedRoute>
+            }
+          />
+          {/* Admin routes – require admin role */}
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/products"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminProducts />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/orders"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminOrders />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/users"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminUsers />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

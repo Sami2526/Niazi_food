@@ -1,78 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
+@theme {
+  --font-sans: "Outfit", sans-serif;
+}
+
+html {
   scroll-behavior: smooth;
-  margin: 0px 2px;
 }
 
 body {
   min-height: 100vh;
   background: #fafafa;
+  font-family: var(--font-sans);
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.explore-menu, .food_display, .cart, .place-order {
-  background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-}
-.food-display-list {
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-}
-.header {
-  background-size: cover;  /* instead of contain */
-  background-position: center;
-}
-.header-contents p {
-  max-width: 80%;
-}
-/* img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-} */
-
-/* Main app container – centered with max-width */
-.app {
-  max-width: 1400px;    /* or 1200px – adjust to your design */
-  margin: 0 auto;
-  padding: 0 40px; 
-  
-  overflow-x: hidden;
-     /* consistent side padding on large screens */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Fade-in animation (keep as is) */
 @keyframes fedeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Responsive adjustments for medium screens */
-@media (max-width: 1024px) {
-  .app {
-    padding: 0 30px;
-  }
-}
-
-/* For tablets and small screens */
-@media (max-width: 768px) {
-  .app {
-    padding: 0 20px;
-  }
-}
-
-/* For mobile phones */
-@media (max-width: 480px) {
-  .app {
-    padding: 0 12px;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

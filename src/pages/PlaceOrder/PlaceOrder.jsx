@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import './PlaceOrder.css';
+import { useContext, useState } from 'react';
 
 import { StoreContext } from '../../context/StoreContext';
 import { database } from '../../firebase/firebase';
@@ -138,12 +137,13 @@ const PlaceOrder = () => {
   };
 
   return (
-    <form className='place-order' onSubmit={handleOrder}>
-      <div className='place-order-left'>
-        <p className='title'>Delivery Information</p>
+    <form className='mt-[100px] flex items-start justify-between gap-[50px] max-[750px]:mt-[50px] max-[750px]:flex-col max-[750px]:gap-[40px]' onSubmit={handleOrder}>
+      <div className='w-full max-w-[max(30%,500px)] max-[750px]:max-w-full'>
+        <p className='mb-[50px] text-[30px] font-semibold max-[750px]:mb-[30px] max-[750px]:text-[25px]'>Delivery Information</p>
 
-        <div className="multi-field">
+        <div className="flex gap-[10px] max-[750px]:flex-col max-[750px]:gap-0">
           <input
+            className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
@@ -152,6 +152,7 @@ const PlaceOrder = () => {
             required
           />
           <input
+            className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
@@ -162,6 +163,7 @@ const PlaceOrder = () => {
         </div>
 
         <input
+          className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -171,6 +173,7 @@ const PlaceOrder = () => {
         />
 
         <input
+          className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
           name="street"
           value={formData.street}
           onChange={handleChange}
@@ -179,8 +182,9 @@ const PlaceOrder = () => {
           required
         />
 
-        <div className="multi-field">
+        <div className="flex gap-[10px] max-[750px]:flex-col max-[750px]:gap-0">
           <input
+            className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
             name="city"
             value={formData.city}
             onChange={handleChange}
@@ -189,6 +193,7 @@ const PlaceOrder = () => {
             required
           />
           <input
+            className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
             name="state"
             value={formData.state}
             onChange={handleChange}
@@ -198,8 +203,9 @@ const PlaceOrder = () => {
           />
         </div>
 
-        <div className="multi-field">
+        <div className="flex gap-[10px] max-[750px]:flex-col max-[750px]:gap-0">
           <input
+            className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
             name="zipCode"
             value={formData.zipCode}
             onChange={handleChange}
@@ -208,6 +214,7 @@ const PlaceOrder = () => {
             required
           />
           <input
+            className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
             name="country"
             value={formData.country}
             onChange={handleChange}
@@ -218,6 +225,7 @@ const PlaceOrder = () => {
         </div>
 
         <input
+          className="mb-[15px] w-full rounded-[4px] border border-[#c5c5c5] p-[10px] outline-[tomato] max-[750px]:box-border"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
@@ -227,10 +235,11 @@ const PlaceOrder = () => {
         />
 
         {/* ====== NEW CARD PAYMENT SECTION ====== */}
-        <div className="place-order-card">
-          <p className="title">Payment Details</p>
+        <div className="mt-[20px] rounded-[8px] border border-[#ddd] bg-[#f9f9f9] p-[20px]">
+          <p className="mb-[50px] text-[30px] font-semibold max-[750px]:mb-[30px] max-[750px]:text-[25px]">Payment Details</p>
 
           <input
+            className="mb-[12px] box-border w-full rounded-[4px] border border-[#ccc] p-[10px] outline-[tomato]"
             name="cardHolder"
             value={cardDetails.cardHolder}
             onChange={handleCardChange}
@@ -240,6 +249,7 @@ const PlaceOrder = () => {
           />
 
           <input
+            className="mb-[12px] box-border w-full rounded-[4px] border border-[#ccc] p-[10px] outline-[tomato]"
             name="cardNumber"
             value={cardDetails.cardNumber}
             onChange={handleCardChange}
@@ -249,8 +259,9 @@ const PlaceOrder = () => {
             required
           />
 
-          <div className="multi-field">
+          <div className="flex gap-[10px] max-[750px]:flex-col">
             <input
+              className="mb-[12px] box-border w-full flex-1 rounded-[4px] border border-[#ccc] p-[10px] outline-[tomato]"
               name="expiry"
               value={cardDetails.expiry}
               onChange={handleCardChange}
@@ -260,6 +271,7 @@ const PlaceOrder = () => {
               required
             />
             <input
+              className="mb-[12px] box-border w-full flex-1 rounded-[4px] border border-[#ccc] p-[10px] outline-[tomato]"
               name="cvv"
               value={cardDetails.cvv}
               onChange={handleCardChange}
@@ -274,28 +286,28 @@ const PlaceOrder = () => {
 
       </div>
 
-      <div className='place-order-right'>
-        <div className="cart-total">
+      <div className='w-full max-w-[max(40%,500px)] max-[750px]:max-w-full'>
+        <div className="flex flex-1 flex-col gap-[20px]">
           <h2>Cart Totals</h2>
 
-          <div className="cart-total-details">
+          <div className="flex justify-between text-[#555]">
             <p>Subtotal</p>
             <p>Rs.{getTotalCartAmount()}</p>
           </div>
-          <hr />
+          <hr className="my-[10px] h-px border-0 bg-[#e2e2e2]" />
 
-          <div className="cart-total-details">
+          <div className="flex justify-between text-[#555]">
             <p>Delivery Fee</p>
             <p>Rs.{getTotalCartAmount() === 0 ? 0 : 150}</p>
           </div>
-          <hr />
+          <hr className="my-[10px] h-px border-0 bg-[#e2e2e2]" />
 
-          <div className="cart-total-details">
+          <div className="flex justify-between text-[#555]">
             <b>Total</b>
             <b>Rs.{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 150}</b>
           </div>
 
-          <button type="submit" disabled={processing}>
+          <button className="mt-[30px] w-[max(15vw,200px)] cursor-pointer rounded-[4px] border-0 bg-[tomato] py-[12px] text-white hover:bg-[rgb(202,116,101)]" type="submit" disabled={processing}>
             {processing ? "Processing..." : "PROCEED TO PAYMENT"}
           </button>
         </div>

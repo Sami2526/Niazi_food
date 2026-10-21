@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { onValue, ref } from "firebase/database";
 import { StoreContext } from "../../context/StoreContext";
 import { database } from "../../firebase/firebase";
-import "./Profile.css";
 
 const emptyProfile = { name: "", photoURL: "", address: "", phone: "" };
 const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
@@ -103,66 +102,66 @@ const Profile = () => {
   };
 
   return (
-    <main className="profile-page">
-      <section className="profile-card">
-        <div className="profile-heading">
+    <main className="min-h-[60vh] bg-[#fafafa] px-[20px] py-[50px] max-[600px]:px-[14px] max-[600px]:py-[28px]">
+      <section className="mx-auto max-w-[760px] rounded-[14px] border border-[#eee] bg-white p-[36px] shadow-[0_8px_28px_rgba(0,0,0,0.06)] max-[600px]:px-[18px] max-[600px]:py-[24px]">
+        <div className="mb-[30px] flex items-start justify-between gap-[20px] max-[600px]:flex-col">
           <div>
-            <p className="profile-eyebrow">Your account</p>
-            <h1>Profile details</h1>
-            <p>Keep your delivery information up to date.</p>
+            <p className="text-[13px] font-semibold uppercase text-[tomato]">Your account</p>
+            <h1 className="my-[6px] text-[32px] text-[#333] max-[600px]:text-[26px]">Profile details</h1>
+            <p className="text-[#676767]">Keep your delivery information up to date.</p>
           </div>
           {!editing && (
-            <button type="button" className="profile-edit-button" onClick={() => setEditing(true)}>
+            <button type="button" className="cursor-pointer whitespace-nowrap rounded-[7px] border border-[tomato] bg-[tomato] px-[20px] py-[10px] text-[14px] text-white max-[600px]:self-start" onClick={() => setEditing(true)}>
               Edit profile
             </button>
           )}
         </div>
 
         <form onSubmit={handleSave}>
-          <div className="profile-photo-row">
+          <div className="mb-[28px] flex items-center gap-[20px] max-[600px]:items-start max-[600px]:flex-col">
             {profile.photoURL ? (
-              <img className="profile-photo" src={profile.photoURL} alt="Profile" />
+              <img className="h-[92px] w-[92px] flex-[0_0_92px] rounded-full object-cover" src={profile.photoURL} alt="Profile" />
             ) : (
-              <div className="profile-photo profile-photo-placeholder">
+              <div className="grid h-[92px] w-[92px] flex-[0_0_92px] place-items-center rounded-full bg-[#49557e] text-[34px] text-white">
                 {(profile.name || user?.email || "U")[0].toUpperCase()}
               </div>
             )}
             {editing && (
-              <label className="profile-photo-field">
+              <label className="flex flex-1 flex-col gap-[8px] text-[14px] font-medium text-[#444]">
                 Choose profile picture
-                <input type="file" accept="image/*" onChange={handlePhotoChange} />
-                <span>JPG, PNG, or WEBP up to 5 MB. Stored securely in Cloudinary.</span>
+                <input className="w-full rounded-[6px] border border-[#ddd] px-[12px] py-[11px] font-[inherit] text-[#333]" type="file" accept="image/*" onChange={handlePhotoChange} />
+                <span className="text-[12px] font-normal text-[#777]">JPG, PNG, or WEBP up to 5 MB. Stored securely in Cloudinary.</span>
               </label>
             )}
           </div>
 
-          <div className="profile-fields">
-            <label>
+          <div className="grid grid-cols-2 gap-[20px] max-[600px]:grid-cols-1">
+            <label className="flex flex-col gap-[8px] text-[14px] font-medium text-[#444]">
               Full name
-              <input name="name" value={profile.name} onChange={handleChange} readOnly={!editing} required />
+              <input className="w-full resize-y rounded-[6px] border border-[#ddd] px-[12px] py-[11px] font-[inherit] text-[#333] read-only:bg-[#fafafa]" name="name" value={profile.name} onChange={handleChange} readOnly={!editing} required />
             </label>
-            <label>
+            <label className="flex flex-col gap-[8px] text-[14px] font-medium text-[#444]">
               Email
-              <input value={user?.email || ""} readOnly />
+              <input className="w-full resize-y rounded-[6px] border border-[#ddd] px-[12px] py-[11px] font-[inherit] text-[#333] read-only:bg-[#fafafa]" value={user?.email || ""} readOnly />
             </label>
-            <label>
+            <label className="flex flex-col gap-[8px] text-[14px] font-medium text-[#444]">
               Phone number
-              <input name="phone" type="tel" value={profile.phone} onChange={handleChange} readOnly={!editing} placeholder="+92 300 1234567" />
+              <input className="w-full resize-y rounded-[6px] border border-[#ddd] px-[12px] py-[11px] font-[inherit] text-[#333] read-only:bg-[#fafafa]" name="phone" type="tel" value={profile.phone} onChange={handleChange} readOnly={!editing} placeholder="+92 300 1234567" />
             </label>
-            <label className="profile-address-field">
+            <label className="flex flex-col gap-[8px] text-[14px] font-medium text-[#444] max-[600px]:col-auto col-[1/-1]">
               Delivery address
-              <textarea name="address" value={profile.address} onChange={handleChange} readOnly={!editing} placeholder="Enter your delivery address" rows="3" />
+              <textarea className="w-full resize-y rounded-[6px] border border-[#ddd] px-[12px] py-[11px] font-[inherit] text-[#333] read-only:bg-[#fafafa]" name="address" value={profile.address} onChange={handleChange} readOnly={!editing} placeholder="Enter your delivery address" rows="3" />
             </label>
           </div>
 
           {editing && (
-            <div className="profile-actions">
-              <button type="button" className="profile-cancel-button" onClick={handleCancel}>Cancel</button>
-              <button type="submit" className="profile-save-button" disabled={saving}>{saving ? "Saving..." : "Save changes"}</button>
+            <div className="mt-[28px] flex justify-end gap-[12px]">
+              <button type="button" className="cursor-pointer whitespace-nowrap rounded-[7px] border border-[#ddd] bg-white px-[20px] py-[10px] text-[14px] text-[#555]" onClick={handleCancel}>Cancel</button>
+              <button type="submit" className="cursor-pointer whitespace-nowrap rounded-[7px] border border-[tomato] bg-[tomato] px-[20px] py-[10px] text-[14px] text-white disabled:cursor-wait disabled:opacity-[0.65]" disabled={saving}>{saving ? "Saving..." : "Save changes"}</button>
             </div>
           )}
-          {message && <p className="profile-message">{message}</p>}
-          {error && <p className="profile-error">{error}</p>}
+          {message && <p className="mt-[18px] text-[14px] text-[#237a45]">{message}</p>}
+          {error && <p className="mt-[18px] text-[14px] text-[#c0392b]">{error}</p>}
         </form>
       </section>
     </main>
